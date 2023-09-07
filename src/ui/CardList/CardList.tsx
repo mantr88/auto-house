@@ -29,11 +29,11 @@ function CardList() {
     <ListContainer>
       {isLoading && <div>LOADING...</div>}
       {cars && (
-        <div>
+        <>
           {cars.map((car) => (
             <Card car={car} />
           ))}
-        </div>
+        </>
       )}
     </ListContainer>
   );

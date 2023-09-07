@@ -1,5 +1,11 @@
 import { Car } from "../CardList/CardList.types";
-import { CarName, CardWrapper } from "./Card.styled";
+import {
+  CarName,
+  CardBtn,
+  CardImg,
+  CardItem,
+  CardWrapper,
+} from "./Card.styled";
 
 interface CardProps {
   car: Car;
@@ -7,13 +13,16 @@ interface CardProps {
 
 function Card({ car }: CardProps) {
   return (
-    <CardWrapper>
-      <img src={car.img} alt={car.model} />
-      <CarName>
-        {car.make}
-        <span>{car.model}</span>
-      </CarName>
-    </CardWrapper>
+    <CardItem key={car.id}>
+      <CardWrapper>
+        <CardImg src={car.img} alt={car.model} />
+        <CarName>
+          {car.make}
+          <span>{car.model}</span>
+        </CarName>
+        <CardBtn>Learn More</CardBtn>
+      </CardWrapper>
+    </CardItem>
   );
 }
 
