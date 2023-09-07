@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./loyouts/MainLoyout/MainLoyout.tsx";
-import ErrorPage from "./loyouts/pages/errorPage.tsx";
-import Home from "./loyouts/pages/Home.tsx";
-import Catalog from "./loyouts/pages/Catalog.tsx";
-import Favorites from "./loyouts/pages/Favorites.tsx";
+import ErrorPage from "./pages/ErrorPage.tsx";
+import Home from "./pages/Home.tsx";
+import Catalog from "./pages/Catalog.tsx";
+import Favorites from "./pages/Favorites.tsx";
 import "modern-normalize";
 
 const router = createBrowserRouter([

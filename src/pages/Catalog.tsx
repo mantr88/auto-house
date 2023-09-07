@@ -1,7 +1,9 @@
+import CardList from "../ui/CardList/CardList";
+
 function Catalog() {
   return (
     <main>
-      <div>This is Catalog page</div>
+      <CardList />
     </main>
   );
 }
