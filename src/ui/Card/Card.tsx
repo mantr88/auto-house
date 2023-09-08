@@ -1,4 +1,7 @@
+import { useState } from "react";
+import CarInfoModal from "../CarInfoModal/CarInfoModal";
 import { Car } from "../CardList/CardList.types";
+import PopupWindow from "../PopupWondow/PopupWondow";
 import {
   CarName,
   CardBtn,
@@ -12,6 +15,10 @@ interface CardProps {
 }
 
 function Card({ car }: CardProps) {
+  const [active, setActive] = useState(true);
+
+  // const handlerOverlayClic = (e) => {};
+
   return (
     <CardItem key={car.id}>
       <CardWrapper>
@@ -20,8 +27,13 @@ function Card({ car }: CardProps) {
           {car.make}
           <span>{car.model}</span>
         </CarName>
-        <CardBtn>Learn More</CardBtn>
+        <CardBtn onClick={() => setActive(true)}>Learn More</CardBtn>
       </CardWrapper>
+      {active && (
+        <PopupWindow active={active} setActive={setActive}>
+          {<CarInfoModal />}
+        </PopupWindow>
+      )}
     </CardItem>
   );
 }
