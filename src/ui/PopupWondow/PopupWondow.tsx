@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Content, Overlay } from "./PopupWondow.styles";
 
@@ -10,24 +10,21 @@ type Props = {
 type QuerySelector = HTMLDivElement | DocumentFragment;
 
 const PopupWindow = ({ active, setActive, children }: Props) => {
-  //   useEffect(() => {
-  //     //  document.body.style.overflow = 'hidden';
-  //     // const closeModalByEsc = (e) => {
-  //     //   if (e.code === 'Escape') {
-  //     //     onClose();
-  //     //   }
-  //   }, []);
+  const closePopupByEsc = (e) => {
+    if (e.code === "Escape") {
+      setActive(false);
+    }
+  };
+  document.addEventListener("keydown", closePopupByEsc);
 
   return createPortal(
     <Overlay
       onClick={() => {
-        console.log("clic on overlay");
         setActive(false);
       }}
     >
       <Content
         onClick={(e) => {
-          console.log("clic on content");
           e.stopPropagation();
         }}
       >
