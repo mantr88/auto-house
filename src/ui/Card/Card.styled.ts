@@ -15,11 +15,11 @@ export const CardItem = styled.li`
   height: 426px;
 
   @media screen and (min-width: 768px) {
-    width: calc((100% - 2 * 30px) / 2);
+    width: calc((100% - 2 * 29px) / 2);
   }
 
   @media screen and (min-width: 1200px) {
-    width: calc((100% - 3 * 30px) / 3);
+    width: calc((100% - 4 * 29px) / 4);
   }
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -43,8 +43,8 @@ export const CardWrapper = styled.div`
 
 export const HeartWrap = styled.div`
   position: absolute;
-  top: 4%;
-  left: 92%;
+  top: 3%;
+  left: 89%;
   z-index: 1;
   width: 18px;
   height: 18px;
@@ -83,14 +83,45 @@ export const CardImg = styled.img`
 
 export const CarTitle = styled.h3`
   margin-bottom: 8px;
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  color: #121417;
+  font-family: "Manrope";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+`;
+
+export const AccentText = styled.span`
+  color: #3470ff;
+`;
+
+export const Price = styled.span`
+  margin-left: 87px;
 `;
 
 export const CarСharacteristics = styled.div`
   margin-bottom: 28px;
+  color: rgba(18, 20, 23, 0.5);
+  font-family: "Manrope";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+
+  span:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background-color: rgba(18, 20, 23, 0.1);
+    margin-right: 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+`;
+
+export const СharItems = styled.span`
+  margin-bottom: 5px;
 `;
 
 export const CardBtn = styled.button`
@@ -104,4 +135,9 @@ export const CardBtn = styled.button`
   background: #3470ff;
 
   color: #fff;
+  font-family: "Manrope";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
 `;

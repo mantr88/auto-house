@@ -30,7 +30,7 @@ img {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "Manrope",source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 

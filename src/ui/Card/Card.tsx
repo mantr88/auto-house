@@ -3,6 +3,7 @@ import CarInfoModal from "../CarInfoModal/CarInfoModal";
 import { Car } from "../CardList/CardList.types";
 import PopupWindow from "../PopupWondow/PopupWondow";
 import {
+  AccentText,
   CarTitle,
   CardBtn,
   CardImg,
@@ -11,6 +12,8 @@ import {
   CarСharacteristics,
   CrossWrap,
   HeartWrap,
+  Price,
+  СharItems,
 } from "./Card.styled";
 import Cross from "../Icons/Cross";
 import HeartIsFilled from "../Icons/HeartIsFilled";
@@ -27,9 +30,24 @@ function Card({ car }: CardProps) {
   const onClose = () => {
     () => setActive(false);
   };
+  const {
+    id,
+    img,
+    model,
+    make,
+    year,
+    rentalPrice,
+    address,
+    rentalCompany,
+    type,
+    mileage,
+    accessories,
+  } = car;
 
+  const city = address.split(", ")[1];
+  const country = address.split(", ")[2];
   return (
-    <CardItem key={car.id}>
+    <CardItem key={id}>
       <CardWrapper>
         {active && (
           <CrossWrap>
@@ -37,19 +55,20 @@ function Card({ car }: CardProps) {
           </CrossWrap>
         )}
         <HeartWrap>{favorite ? <HeartIsFilled /> : <ClearHeart />}</HeartWrap>
-        <CardImg src={car.img} alt={car.model} />
+        <CardImg src={img} alt={model} />
         <CarTitle>
-          {car.make} <span>{car.model},</span>
-          <span>{car.year}</span>
-          <span>{car.rentalPrice}</span>
+          {make} <AccentText>{model}, </AccentText>
+          {year}
+          <Price>{rentalPrice}</Price>
         </CarTitle>
         <CarСharacteristics>
-          <span>{car.address}</span>
-          <span>{car.rentalCompany}</span>
-          <span>{car.type}</span>
-          <span>{car.make}</span>
-          <span>{car.mileage}</span>
-          <span>{car.accessories[1]}</span>
+          <СharItems>{city}</СharItems>
+          <СharItems>{country}</СharItems>
+          <СharItems>{rentalCompany}</СharItems>
+          <СharItems>{type}</СharItems>
+          <СharItems>{make}</СharItems>
+          <СharItems>{mileage}</СharItems>
+          <СharItems>{accessories[1]}</СharItems>
         </CarСharacteristics>
         <CardBtn onClick={() => setActive(true)}>Learn More</CardBtn>
       </CardWrapper>
