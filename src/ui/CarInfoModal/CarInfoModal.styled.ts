@@ -8,10 +8,13 @@ export const InfoCarWrapper = styled.div`
   border-radius: 24px;
 `;
 
-export const CrossWrap = styled.div`
+export const CrossBtn = styled.button`
   position: absolute;
   top: 3%;
   left: 93%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 `;
 
 export const CarImg = styled.img`

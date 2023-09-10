@@ -6,7 +6,7 @@ import {
   CarImg,
   InfoCarWrapper,
   CarСharacteristics,
-  CrossWrap,
+  CrossBtn,
   СharItems,
   Description,
   DescriptionText,
@@ -33,7 +33,6 @@ function CarInfoModal({ car, closeModal }: CardProps) {
     year,
     rentalPrice,
     address,
-    rentalCompany,
     type,
     mileage,
     accessories,
@@ -54,9 +53,9 @@ function CarInfoModal({ car, closeModal }: CardProps) {
   const completeSet = [...accessories, ...functionalities];
   return (
     <InfoCarWrapper>
-      <CrossWrap onClick={closeModal()}>
+      <CrossBtn type="button" onClick={closeModal}>
         <Cross />
-      </CrossWrap>
+      </CrossBtn>
       <CarImg src={img} alt={model} />
       <CarTitle>
         <p>

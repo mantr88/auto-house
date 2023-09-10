@@ -10,7 +10,6 @@ import {
   CardItem,
   CardWrapper,
   CarСharacteristics,
-  CrossWrap,
   HeartWrap,
   Price,
   СharItems,
@@ -27,7 +26,7 @@ function Card({ car }: CardProps) {
   const [favorite, setFavorite] = useState(false);
 
   const onClose = () => {
-    () => setActive(false);
+    setActive(false);
   };
 
   const {
