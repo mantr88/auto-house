@@ -42,7 +42,7 @@ function CarInfoModal({ car, closeModal }: CardProps) {
     functionalities,
   } = car;
 
-  function formatNumberWithCommas(num) {
+  function formatNumberWithCommas(num: number) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
@@ -76,8 +76,8 @@ function CarInfoModal({ car, closeModal }: CardProps) {
         <DescriptionText>{description}</DescriptionText>
         <Accessories>Accessories and functionalities:</Accessories>
         <CarСharacteristics>
-          {completeSet.map((el) => (
-            <СharItems>{el}</СharItems>
+          {completeSet.map((el, idx) => (
+            <СharItems key={idx}>{el}</СharItems>
           ))}
         </CarСharacteristics>
         <Conditions>Rental Conditions:</Conditions>

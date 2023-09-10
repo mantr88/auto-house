@@ -8,10 +8,9 @@ function CardList() {
   const [cars, setCars] = useState<Cars | []>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  console.log(cars);
 
   useEffect(() => {
-    const fetchCars = async (page) => {
+    const fetchCars = async (page: number) => {
       try {
         setIsLoading(true);
         const result = await getCars(page);

@@ -1,7 +1,9 @@
+import FavoritesList from "../components/FavoritesList/FavoritesList";
+
 function Favorites() {
   return (
     <main>
-      <div>This is Favorites page</div>
+      <FavoritesList />
     </main>
   );
 }

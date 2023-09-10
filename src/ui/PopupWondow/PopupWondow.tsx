@@ -3,14 +3,13 @@ import { createPortal } from "react-dom";
 import { Content, Overlay } from "./PopupWondow.styles";
 
 type Props = {
-  active: boolean;
   setActive: (arg: boolean) => void;
   children: ReactNode;
 };
 type QuerySelector = HTMLDivElement | DocumentFragment;
 
-const PopupWindow = ({ active, setActive, children }: Props) => {
-  const closePopupByEsc = (e) => {
+const PopupWindow = ({ setActive, children }: Props) => {
+  const closePopupByEsc = (e: KeyboardEvent) => {
     if (e.code === "Escape") {
       setActive(false);
     }
