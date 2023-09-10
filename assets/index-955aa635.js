@@ -97,7 +97,7 @@ Error generating stack: `+i.message+`
     color: white;
     background-color: #3470ff;
   }
-`,B1=()=>R.jsx($1,{children:R.jsxs("nav",{children:[R.jsx(Ma,{to:"/",children:"Home"}),R.jsx(Ma,{to:"/catalog",children:"Catalog"}),R.jsx(Ma,{to:"/favorites",children:"Favorites"})]})});const H1=F1`
+`,B1=()=>R.jsx($1,{children:R.jsxs("nav",{children:[R.jsx(Ma,{to:"/auto-house/",children:"Home"}),R.jsx(Ma,{to:"/auto-house/catalog",children:"Catalog"}),R.jsx(Ma,{to:"/auto-house/favorites",children:"Favorites"})]})});const H1=F1`
 
 *,
 *::before,
@@ -421,4 +421,4 @@ a {
   &:focus {
     color: rgba(11, 68, 205, 1);
   }
-`;function $S(){const[e,t]=T.useState([]),[n,r]=T.useState(!1),[o,i]=T.useState(1);T.useEffect(()=>{(async s=>{try{r(!0);const u=await dS(s);if(s===1){t(u);return}s!==1&&t(c=>[...c,...u])}catch(u){throw new Error(`😢Sorry, it is error. Your error 👉 ${u}`)}finally{r(!1)}})(o)},[o]);const l=()=>{i(a=>a+1)};return R.jsxs(Dm,{children:[n&&R.jsx("div",{children:"LOADING..."}),e.map((a,s)=>R.jsx(jm,{car:a},s)),o<4&&R.jsx(US,{type:"button",onClick:l,children:"Load more"})]})}function BS(){return R.jsx("main",{children:R.jsx($S,{})})}function HS(){const[e,t]=T.useState([]);return T.useEffect(()=>{const n=localStorage.getItem("favoriteCars"),r=JSON.parse(n);r&&t(r)},[]),R.jsx(Dm,{children:e.map((n,r)=>R.jsx(jm,{car:n},r))})}function WS(){return R.jsx("main",{children:R.jsx(HS,{})})}const VS=Lv([{path:"/",element:R.jsx(W1,{}),errorElement:R.jsx(V1,{}),children:[{index:!0,element:R.jsx(X1,{})},{path:"/catalog",element:R.jsx(BS,{})},{path:"/favorites",element:R.jsx(WS,{})}]}]);Ba.createRoot(document.getElementById("root")).render(R.jsx(kt.StrictMode,{children:R.jsx(Sv,{router:VS})}));
+`;function $S(){const[e,t]=T.useState([]),[n,r]=T.useState(!1),[o,i]=T.useState(1);T.useEffect(()=>{(async s=>{try{r(!0);const u=await dS(s);if(s===1){t(u);return}s!==1&&t(c=>[...c,...u])}catch(u){throw new Error(`😢Sorry, it is error. Your error 👉 ${u}`)}finally{r(!1)}})(o)},[o]);const l=()=>{i(a=>a+1)};return R.jsxs(Dm,{children:[n&&R.jsx("div",{children:"LOADING..."}),e.map((a,s)=>R.jsx(jm,{car:a},s)),o<4&&R.jsx(US,{type:"button",onClick:l,children:"Load more"})]})}function BS(){return R.jsx("main",{children:R.jsx($S,{})})}function HS(){const[e,t]=T.useState([]);return T.useEffect(()=>{const n=localStorage.getItem("favoriteCars"),r=JSON.parse(n);r&&t(r)},[]),R.jsx(Dm,{children:e.map((n,r)=>R.jsx(jm,{car:n},r))})}function WS(){return R.jsx("main",{children:R.jsx(HS,{})})}const VS=Lv([{path:"/auto-house/",element:R.jsx(W1,{}),errorElement:R.jsx(V1,{}),children:[{path:"/auto-house/",element:R.jsx(X1,{})},{path:"/auto-house/catalog",element:R.jsx(BS,{})},{path:"/auto-house/favorites",element:R.jsx(WS,{})}]}]);Ba.createRoot(document.getElementById("root")).render(R.jsx(kt.StrictMode,{children:R.jsx(Sv,{router:VS})}));
