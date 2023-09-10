@@ -1,18 +1,11 @@
 import styled from "styled-components";
 
 export const CardItem = styled.li`
-  /* display: flex;
-  margin: -14.5px;
-  
-  @media (min-width: 40rem) {
-    width: 50%;
-  }
-  @media (min-width: 56rem) {
-    width: 33.3333%;
-  } */
   margin: 14.5px;
-  width: 274px;
   height: 426px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 2 * 29px) / 2);
@@ -22,14 +15,10 @@ export const CardItem = styled.li`
     width: calc((100% - 4 * 29px) / 4);
   }
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* border: 2px solid tomato; */
 `;
 
 export const CardWrapper = styled.div`
   position: relative;
-  background-color: white;
-  border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
@@ -45,43 +34,21 @@ export const HeartWrap = styled.div`
   position: absolute;
   top: 3%;
   left: 89%;
-  z-index: 1;
+  z-index: 2;
   width: 18px;
   height: 18px;
 `;
 
-export const CrossWrap = styled.div`
-  position: absolute;
-  top: 20%;
-  left: 50%;
-`;
-
 export const CardImg = styled.img`
-  height: 267px;
-  max-width: 100%;
+  height: 268px;
   margin-bottom: 14px;
-  /* vertical-align: middle; */
   object-fit: cover;
-
   border-radius: 14px;
-  /* filter: contrast(70%); */
-  //filter: saturate(180%);
-  /* overflow: hidden; */
-  /* position: relative; */
-  /* transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-  &::before {
-    content: "";
-    display: block;
-    padding-top: 56.25%; // 16:9 aspect ratio
-  } */
-  /* @media (min-width: 40rem) {
-    &::before {
-      padding-top: 66.6%; // 3:2 aspect ratio
-    } */
-  /* } */
 `;
 
 export const CarTitle = styled.h3`
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
   color: #121417;
   font-family: "Manrope";
@@ -106,7 +73,7 @@ export const CarСharacteristics = styled.div`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 150% */
+  line-height: 18px;
 
   span:not(:last-child)::after {
     content: "";
@@ -128,8 +95,6 @@ export const CardBtn = styled.button`
   width: 100%;
   height: 44px;
   padding: 12px 99px;
-  justify-content: center;
-  align-items: center;
   border: none;
   border-radius: 12px;
   background: #3470ff;
@@ -139,5 +104,5 @@ export const CardBtn = styled.button`
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
 `;

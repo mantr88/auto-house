@@ -15,7 +15,6 @@ import {
   Price,
   СharItems,
 } from "./Card.styled";
-import Cross from "../Icons/Cross";
 import HeartIsFilled from "../Icons/HeartIsFilled";
 import ClearHeart from "../Icons/ClearHeart";
 
@@ -30,6 +29,7 @@ function Card({ car }: CardProps) {
   const onClose = () => {
     () => setActive(false);
   };
+
   const {
     id,
     img,
@@ -49,16 +49,14 @@ function Card({ car }: CardProps) {
   return (
     <CardItem key={id}>
       <CardWrapper>
-        {active && (
-          <CrossWrap>
-            <Cross />
-          </CrossWrap>
-        )}
         <HeartWrap>{favorite ? <HeartIsFilled /> : <ClearHeart />}</HeartWrap>
         <CardImg src={img} alt={model} />
         <CarTitle>
-          {make} <AccentText>{model}, </AccentText>
-          {year}
+          <p>
+            {make} <AccentText>{model}, </AccentText>
+            {year}
+          </p>
+
           <Price>{rentalPrice}</Price>
         </CarTitle>
         <CarСharacteristics>
@@ -66,7 +64,7 @@ function Card({ car }: CardProps) {
           <СharItems>{country}</СharItems>
           <СharItems>{rentalCompany}</СharItems>
           <СharItems>{type}</СharItems>
-          <СharItems>{make}</СharItems>
+          <СharItems>{model}</СharItems>
           <СharItems>{mileage}</СharItems>
           <СharItems>{accessories[1]}</СharItems>
         </CarСharacteristics>
@@ -74,7 +72,7 @@ function Card({ car }: CardProps) {
       </CardWrapper>
       {active && (
         <PopupWindow active={active} setActive={setActive}>
-          <CarInfoModal />
+          <CarInfoModal car={car} closeModal={onClose} />
         </PopupWindow>
       )}
     </CardItem>

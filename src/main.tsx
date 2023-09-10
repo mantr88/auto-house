@@ -7,7 +7,7 @@ import Home from "./pages/Home.tsx";
 import Catalog from "./pages/Catalog.tsx";
 import Favorites from "./pages/Favorites.tsx";
 import "modern-normalize";
-import "./index.css";
+import "./fonts.css";
 
 const router = createBrowserRouter([
   {
