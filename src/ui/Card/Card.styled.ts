@@ -97,7 +97,7 @@ export const CardBtn = styled.button`
   padding: 12px 99px;
   border: none;
   border-radius: 12px;
-  background: #3470ff;
+  background: rgba(52, 112, 255, 1);
 
   color: #fff;
   font-family: "Manrope";
@@ -105,4 +105,9 @@ export const CardBtn = styled.button`
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+
+  &:hover,
+  &:focus {
+    background: rgba(11, 68, 205, 1);
+  }
 `;

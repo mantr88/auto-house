@@ -46,7 +46,7 @@ function Card({ car }: CardProps) {
   const city = address.split(", ")[1];
   const country = address.split(", ")[2];
   return (
-    <CardItem key={id}>
+    <CardItem>
       <CardWrapper>
         <HeartWrap>{favorite ? <HeartIsFilled /> : <ClearHeart />}</HeartWrap>
         <CardImg src={img} alt={model} />

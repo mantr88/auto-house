@@ -121,7 +121,7 @@ export const RentalLink = styled.a`
   padding: 12px 50px;
   border: none;
   border-radius: 12px;
-  background: #3470ff;
+  background: rgba(11, 68, 205, 1);
 
   color: #fff;
   font-family: "Manrope";
@@ -132,6 +132,6 @@ export const RentalLink = styled.a`
 
   &:hover,
   &:focus {
-    box-shadow: 2px 2px 4px 3px #709aff;
+    background: rgba(52, 112, 255, 1);
   }
 `;
