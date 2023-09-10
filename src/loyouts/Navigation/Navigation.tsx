@@ -4,9 +4,9 @@ export const Navigation = () => {
   return (
     <Header>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/catalog">Catalog</Link>
-        <Link to="/favorites">Favorites</Link>
+        <Link to="/auto-house/">Home</Link>
+        <Link to="/auto-house/catalog">Catalog</Link>
+        <Link to="/auto-house/favorites">Favorites</Link>
       </nav>
     </Header>
   );

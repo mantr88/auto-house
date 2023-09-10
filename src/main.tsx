@@ -11,20 +11,20 @@ import "./fonts.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/auto-house/",
     element: <MainLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
+        path: "/auto-house/",
         element: <Home />,
       },
       {
-        path: "/catalog",
+        path: "/auto-house/catalog",
         element: <Catalog />,
       },
       {
-        path: "/favorites",
+        path: "/auto-house/favorites",
         element: <Favorites />,
       },
     ],
