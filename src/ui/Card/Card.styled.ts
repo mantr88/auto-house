@@ -50,6 +50,7 @@ export const CarTitle = styled.h3`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  padding-left: 10px;
   color: #121417;
   font-family: "Manrope";
   font-size: 16px;
@@ -64,10 +65,12 @@ export const AccentText = styled.span`
 
 export const Price = styled.span`
   margin-left: 87px;
+  padding-right: 10px;
 `;
 
 export const CarСharacteristics = styled.div`
   margin-bottom: 28px;
+  padding-left: 10px;
   color: rgba(18, 20, 23, 0.5);
   font-family: "Manrope";
   font-size: 12px;
