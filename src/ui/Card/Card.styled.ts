@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const CardItem = styled.li`
   margin: 14.5px;
-  height: 426px;
-  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -22,6 +20,7 @@ export const CardWrapper = styled.div`
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  font-family: "Manrope";
   overflow: hidden;
   &:hover {
     .card__image {
@@ -52,9 +51,7 @@ export const CarTitle = styled.h3`
   margin-bottom: 8px;
   padding-left: 10px;
   color: #121417;
-  font-family: "Manrope";
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
 `;
@@ -72,9 +69,7 @@ export const CarСharacteristics = styled.div`
   margin-bottom: 28px;
   padding-left: 10px;
   color: rgba(18, 20, 23, 0.5);
-  font-family: "Manrope";
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: 18px;
 
@@ -103,9 +98,7 @@ export const CardBtn = styled.button`
   background: rgba(52, 112, 255, 1);
 
   color: #fff;
-  font-family: "Manrope";
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
   line-height: 20px;
 
