@@ -4,6 +4,8 @@ export const CardItem = styled.li`
   margin: 14.5px;
   display: flex;
   flex-direction: column;
+  width: 274px;
+  height: 426px;
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 2 * 29px) / 2);

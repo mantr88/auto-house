@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const ListContainer = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
   margin: -14.5px;
+
+  @media screen and (min-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 export const LoadBtn = styled.button`
   margin-left: auto;
@@ -14,7 +17,7 @@ export const LoadBtn = styled.button`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 24px;
   text-decoration-line: underline;
 
   border: none;
