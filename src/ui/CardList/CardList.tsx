@@ -3,6 +3,7 @@ import { getCars } from "../../services/api";
 import Card from "../Card/Card";
 import { Cars } from "./CardList.types";
 import { ListContainer, LoadBtn } from "./CardList.styled";
+import Selects from "../../components/Selects/Selects";
 
 function CardList() {
   const [cars, setCars] = useState<Cars | []>([]);
@@ -35,17 +36,20 @@ function CardList() {
   };
 
   return (
-    <ListContainer>
-      {isLoading && <div>LOADING...</div>}
-      {cars.map((car, idx) => (
-        <Card key={idx} car={car} />
-      ))}
-      {page < 4 && (
-        <LoadBtn type="button" onClick={clickBtnLoadMoreHandler}>
-          Load more
-        </LoadBtn>
-      )}
-    </ListContainer>
+    <>
+      <Selects />
+      <ListContainer>
+        {isLoading && <div>LOADING...</div>}
+        {cars.map((car, idx) => (
+          <Card key={idx} car={car} />
+        ))}
+        {page < 4 && (
+          <LoadBtn type="button" onClick={clickBtnLoadMoreHandler}>
+            Load more
+          </LoadBtn>
+        )}
+      </ListContainer>
+    </>
   );
 }
 
