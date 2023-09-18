@@ -5,6 +5,11 @@ export const TopSection = styled.section`
   flex-direction: row;
 `;
 
+export const Hero = styled.section`
+  width: 100%;
+  background-image: url("https://car-images.bauersecure.com/wp-images/12824/xc90_100.jpg");
+`;
+
 export const TopImg = styled.img`
   width: 400px;
   height: 300px;
