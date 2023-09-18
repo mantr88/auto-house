@@ -23,6 +23,11 @@ export const LoadBtn = styled.button`
   border: none;
   background-color: #fff;
 
+  @media screen and (max-width: 480px) {
+    margin-left: 33%;
+    margin-right: 33%;
+  }
+
   &:hover,
   &:focus {
     color: rgba(11, 68, 205, 1);

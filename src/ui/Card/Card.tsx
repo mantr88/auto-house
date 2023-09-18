@@ -26,6 +26,7 @@ function Card({ car }: CardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const onClose = () => {
+    document.body.style.overflow = "visible";
     setActive(false);
   };
 
@@ -100,7 +101,7 @@ function Card({ car }: CardProps) {
         <CardBtn onClick={() => setActive(true)}>Learn More</CardBtn>
       </CardWrapper>
       {active && (
-        <PopupWindow setActive={setActive}>
+        <PopupWindow setActive={setActive} active={active}>
           <CarInfoModal car={car} closeModal={onClose} />
         </PopupWindow>
       )}

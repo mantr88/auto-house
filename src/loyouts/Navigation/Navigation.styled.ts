@@ -4,10 +4,14 @@ import styled from "styled-components";
 export const Header = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
   padding: 8px 0;
   margin-bottom: 16px;
+
+  :not(:last-child) {
+    margin-right: 12px;
+  }
 
   > nav {
     display: flex;

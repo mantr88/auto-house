@@ -4,7 +4,7 @@ export const CardItem = styled.li`
   margin: 14.5px;
   display: flex;
   flex-direction: column;
-  width: 274px;
+  max-width: 425px;
   height: 426px;
 
   @media screen and (min-width: 768px) {
@@ -19,7 +19,6 @@ export const CardItem = styled.li`
 
 export const CardWrapper = styled.div`
   position: relative;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   font-family: "Manrope";

@@ -11,12 +11,9 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   box-sizing: border-box;
-  width: 1440px;
-  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

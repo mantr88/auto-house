@@ -6,15 +6,28 @@ export const InfoCarWrapper = styled.div`
   flex-direction: column;
   padding: 40px;
   border-radius: 24px;
+
+  @media screen and (max-width: 480px) {
+    padding: 26px;
+  }
 `;
 
 export const CrossBtn = styled.button`
   position: absolute;
-  top: 3%;
-  left: 93%;
+  top: 2%;
+  left: 92%;
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    top: 1%;
+    left: 91%;
+  }
+  @media screen and (max-width: 320px) {
+    top: 0.5%;
+    left: 89%;
+  }
 `;
 
 export const CarImg = styled.img`

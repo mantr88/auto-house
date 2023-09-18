@@ -10,7 +10,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   background-color: rgba(18, 20, 23, 0.5);
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const Content = styled.div`
@@ -18,4 +18,9 @@ export const Content = styled.div`
   background-color: #fff;
   width: 541px;
   height: 752px;
+
+  @media screen and (max-width: 480px) {
+    width: 95%;
+    height: 90%;
+  }
 `;
