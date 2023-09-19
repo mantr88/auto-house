@@ -6,12 +6,14 @@ import { ListContainer, LoadBtn } from "./CardList.styled";
 import Selects from "../../components/Selects/Selects";
 
 type Mark = string | undefined;
+type Price = number | undefined;
 
 function CardList() {
   const [cars, setCars] = useState<Cars | []>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [filterByMark, setFilterByMark] = useState<Mark>("");
+  const [filterByPrice, setFilterByPrice] = useState<Price>(0);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -39,10 +41,18 @@ function CardList() {
     setFilterByMark(selectedMark);
   };
 
-  const filtersCars = (cars: Cars, filterByMark: Mark) => {
+  const selectedCarsByPrice = (selectedPrice: Price) => {
+    setFilterByPrice(selectedPrice);
+  };
+
+  const filtersCars = (
+    cars: Cars,
+    filterByMark: Mark,
+    filterByPrice: Price
+  ) => {
     let filteredCars = [...cars];
 
-    if (filterByMark !== undefined) {
+    if (filterByMark) {
       const normalizeFilterByMark = filterByMark.toLowerCase();
 
       filteredCars = filteredCars.filter((car) =>
@@ -50,14 +60,24 @@ function CardList() {
       );
     }
 
+    if (filterByPrice) {
+      filteredCars = filteredCars.filter((car) => {
+        return Number(car.rentalPrice.slice(1)) <= filterByPrice;
+      });
+    }
+
     return filteredCars;
   };
 
-  const visibleCars = filtersCars(cars, filterByMark);
+  const visibleCars = filtersCars(cars, filterByMark, filterByPrice);
 
   return (
     <>
-      <Selects cars={cars} selectedCarsByMark={selectedCarsByMark} />
+      <Selects
+        cars={cars}
+        selectedCarsByMark={selectedCarsByMark}
+        selectedCarsByPrice={selectedCarsByPrice}
+      />
       <ListContainer>
         {isLoading && <div>LOADING...</div>}
         {visibleCars.map((car, idx) => (
