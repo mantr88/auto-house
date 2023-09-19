@@ -14,6 +14,8 @@ function CardList() {
   const [page, setPage] = useState(1);
   const [filterByMark, setFilterByMark] = useState<Mark>("");
   const [filterByPrice, setFilterByPrice] = useState<Price>(0);
+  const [startMileage, setStartMileage] = useState(0);
+  const [endMileage, setEndMileage] = useState(0);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -45,10 +47,18 @@ function CardList() {
     setFilterByPrice(selectedPrice);
   };
 
+  const selectedCarsByMileage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStartMileage(e.currentTarget.elements.startMileage.value);
+    setEndMileage(e.currentTarget.elements.endMileage.value);
+  };
+
   const filtersCars = (
     cars: Cars,
     filterByMark: Mark,
-    filterByPrice: Price
+    filterByPrice: Price,
+    startMileage,
+    endMileage
   ) => {
     let filteredCars = [...cars];
 
@@ -66,10 +76,24 @@ function CardList() {
       });
     }
 
+    if (startMileage) {
+      filteredCars = filteredCars.filter((car) => car.mileage >= startMileage);
+    }
+
+    if (endMileage) {
+      filteredCars = filteredCars.filter((car) => car.mileage <= endMileage);
+    }
+
     return filteredCars;
   };
 
-  const visibleCars = filtersCars(cars, filterByMark, filterByPrice);
+  const visibleCars = filtersCars(
+    cars,
+    filterByMark,
+    filterByPrice,
+    startMileage,
+    endMileage
+  );
 
   return (
     <>
@@ -77,6 +101,7 @@ function CardList() {
         cars={cars}
         selectedCarsByMark={selectedCarsByMark}
         selectedCarsByPrice={selectedCarsByPrice}
+        selectedCarsByMileage={selectedCarsByMileage}
       />
       <ListContainer>
         {isLoading && <div>LOADING...</div>}

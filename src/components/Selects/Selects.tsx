@@ -8,9 +8,15 @@ type Props = {
   cars: Cars;
   selectedCarsByMark: (option: string | undefined) => void;
   selectedCarsByPrice: (option: number | undefined) => void;
+  selectedCarsByMileage: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
-function Selects({ cars, selectedCarsByMark, selectedCarsByPrice }: Props) {
+function Selects({
+  cars,
+  selectedCarsByMark,
+  selectedCarsByPrice,
+  selectedCarsByMileage,
+}: Props) {
   const [isClearable] = useState(true);
   const makesOptions = makes.map((make, idx) => ({ value: idx, label: make }));
   const prices = Array.from(
@@ -35,6 +41,19 @@ function Selects({ cars, selectedCarsByMark, selectedCarsByPrice }: Props) {
         isClearable={isClearable}
         name="price"
       />
+      <form
+        onSubmit={selectedCarsByMileage}
+        name="search_form"
+        autoComplete="on"
+        noValidate
+      >
+        <label>
+          Сar mileage / km
+          <input type="text" name="startMileage" />
+          <input type="text" name="endMileage" />
+        </label>
+        <button type="submit">Search</button>
+      </form>
     </SelectsWrap>
   );
 }
