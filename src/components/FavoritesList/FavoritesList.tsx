@@ -6,6 +6,7 @@ import NotFound from "../../ui/Not Found/NotFound";
 
 function FavoritesList() {
   const [cars, setCars] = useState<Cars | []>([]);
+
   useEffect(() => {
     const favoritesItems: string | null = localStorage.getItem(
       "favoriteCars"

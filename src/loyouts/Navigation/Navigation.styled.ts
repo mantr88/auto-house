@@ -7,7 +7,6 @@ export const Header = styled.header`
   justify-content: center;
   gap: 16px;
   padding: 8px 0;
-  margin-bottom: 16px;
 
   :not(:last-child) {
     margin-right: 12px;

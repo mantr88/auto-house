@@ -34,7 +34,6 @@ export const HeartWrap = styled.div`
   position: absolute;
   top: 3%;
   left: 89%;
-  z-index: 2;
   width: 18px;
   height: 18px;
 `;
@@ -90,7 +89,7 @@ export const СharItems = styled.span`
   margin-bottom: 5px;
 `;
 
-export const CardBtn = styled.button`
+export const CardBtn = styled.div`
   width: 100%;
   height: 44px;
   padding: 12px 99px;

@@ -11,11 +11,11 @@ type Price = number | undefined;
 function CardList() {
   const [cars, setCars] = useState<Cars | []>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(1);
   const [filterByMark, setFilterByMark] = useState<Mark>("");
   const [filterByPrice, setFilterByPrice] = useState<Price>(0);
   const [startMileage, setStartMileage] = useState(0);
   const [endMileage, setEndMileage] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(8);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -36,7 +36,7 @@ function CardList() {
   }, []);
 
   const clickBtnLoadMoreHandler = () => {
-    setPage((pervState) => pervState + 1);
+    setVisibleCards((pervState) => pervState + 8);
   };
 
   const selectedCarsByMark = (selectedMark: Mark) => {
@@ -113,10 +113,10 @@ function CardList() {
       />
       <ListContainer>
         {isLoading && <div>LOADING...</div>}
-        {visibleCars.map((car, idx) => (
+        {visibleCars.slice(0, visibleCards).map((car, idx) => (
           <Card key={idx} car={car} />
         ))}
-        {page < 4 && (
+        {visibleCards < 32 && (
           <LoadBtn type="button" onClick={clickBtnLoadMoreHandler}>
             Load more
           </LoadBtn>
