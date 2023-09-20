@@ -1,18 +1,15 @@
 import { useState } from "react";
 import Select from "react-select";
 import { SelectsWrap } from "./Selects.styles";
-import { Cars } from "../../ui/CardList/CardList.types";
 import makes from "../../data/makes.json";
 
 type Props = {
-  cars: Cars;
   selectedCarsByMark: (option: string | undefined) => void;
   selectedCarsByPrice: (option: number | undefined) => void;
   selectedCarsByMileage: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
 function Selects({
-  cars,
   selectedCarsByMark,
   selectedCarsByPrice,
   selectedCarsByMileage,

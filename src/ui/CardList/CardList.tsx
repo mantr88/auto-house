@@ -49,16 +49,25 @@ function CardList() {
 
   const selectedCarsByMileage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStartMileage(e.currentTarget.elements.startMileage.value);
-    setEndMileage(e.currentTarget.elements.endMileage.value);
+    const startMileageInput = e.currentTarget.querySelector(
+      'input[name="startMileage"]'
+    ) as HTMLInputElement;
+    const endMileageInput = e.currentTarget.querySelector(
+      'input[name="endMileage"]'
+    ) as HTMLInputElement;
+
+    if (startMileageInput && endMileageInput) {
+      setStartMileage(Number(startMileageInput.value));
+      setEndMileage(Number(endMileageInput.value));
+    }
   };
 
   const filtersCars = (
     cars: Cars,
     filterByMark: Mark,
     filterByPrice: Price,
-    startMileage,
-    endMileage
+    startMileage: number,
+    endMileage: number
   ) => {
     let filteredCars = [...cars];
 
@@ -98,7 +107,6 @@ function CardList() {
   return (
     <>
       <Selects
-        cars={cars}
         selectedCarsByMark={selectedCarsByMark}
         selectedCarsByPrice={selectedCarsByPrice}
         selectedCarsByMileage={selectedCarsByMileage}

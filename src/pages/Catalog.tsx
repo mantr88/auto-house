@@ -1,4 +1,3 @@
-
 import CardList from "../ui/CardList/CardList";
 
 function Catalog() {
