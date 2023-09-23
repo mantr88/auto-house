@@ -17,13 +17,12 @@ body {
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff;
+  background: ${(props) => props.theme.colors.bg};
 }
 
 #root {
   max-width: 1440px;
   margin: 0 auto;
-  background: #fff;
 }
 
 ul {

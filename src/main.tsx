@@ -8,6 +8,8 @@ import Catalog from "./pages/Catalog.tsx";
 import Favorites from "./pages/Favorites.tsx";
 import "modern-normalize";
 import "./fonts.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./services/theme.ts";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );

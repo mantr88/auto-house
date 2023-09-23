@@ -19,21 +19,20 @@ export const SelectBlocWrap = styled.div`
 
 export const SelectBlocTitle = styled.p`
   margin-bottom: 8px;
-  color: #8a8a89;
+  color: ${(p) => p.theme.colors.paleTextFilter};
   font-family: Manrope;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 1.28;
 `;
 
 export const FormInput = styled.input`
   margin-bottom: 18px;
   border-radius: 14px;
-  background: #f7f7fb;
+  background: ${(p) => p.theme.colors.filterBg};
   border-color: transparent;
 
-  color: #121417;
+  color: ${(p) => p.theme.colors.darkText};
   font-size: 18px;
   font-weight: 500;
 
@@ -42,12 +41,11 @@ export const FormInput = styled.input`
   }
 
   &::placeholder {
-    color: #121417;
+    color: ${(p) => p.theme.colors.darkText};
     font-family: Manrope;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 1.11;
   }
 
   &#startMileage {
@@ -57,7 +55,6 @@ export const FormInput = styled.input`
 
     border-radius: 14px 0px 0px 14px;
     border-right: 1px solid rgba(138, 138, 137, 0.2);
-    background: #f7f7fb;
 
     @media screen and (min-width: 480px) {
       width: 160px;
@@ -70,7 +67,6 @@ export const FormInput = styled.input`
     padding: 14px 24px 14px 24px;
 
     border-radius: 0px 14px 14px 0px;
-    background: #f7f7fb;
 
     @media screen and (min-width: 480px) {
       width: 160px;
@@ -86,19 +82,20 @@ export const SearchButton = styled.button`
   align-items: center;
   border-radius: 12px;
   border-color: transparent;
-  background: #3470ff;
+  background: ${(p) => p.theme.colors.main};
 
-  color: #fff;
+  color: ${(p) => p.theme.colors.whiteText};
   font-family: Manrope;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
+
   @media screen and (min-width: 480px) {
     margin-left: 18px;
   }
 
   &:hover,
   &:focus {
-    background-color: #0b44cd;
+    background-color: ${(p) => p.theme.colors.hover};
   }
 `;

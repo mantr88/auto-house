@@ -68,17 +68,17 @@ export const Price = styled.span`
 export const CarСharacteristics = styled.div`
   margin-bottom: 28px;
   padding-left: 10px;
-  color: rgba(18, 20, 23, 0.5);
+  color: ${(p) => p.theme.colors.paleTextCard};
   font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.5;
 
   span:not(:last-child)::after {
     content: "";
     display: inline-block;
     width: 1px;
     height: 16px;
-    background-color: rgba(18, 20, 23, 0.1);
+    background-color: ${(p) => p.theme.colors.divider};
     margin-right: 6px;
     margin-left: 6px;
     vertical-align: middle;
@@ -95,15 +95,15 @@ export const CardBtn = styled.button`
   padding: 12px 99px;
   border: none;
   border-radius: 12px;
-  background: rgba(52, 112, 255, 1);
+  background: ${(p) => p.theme.colors.main};
 
-  color: #fff;
+  color: ${(p) => p.theme.colors.whiteText};
   font-size: 14px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.4;
 
   &:hover,
   &:focus {
-    background: rgba(11, 68, 205, 1);
+    background: ${(p) => p.theme.colors.hover};
   }
 `;

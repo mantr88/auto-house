@@ -12,12 +12,10 @@ export const ListContainer = styled.ul`
 export const LoadBtn = styled.button`
   margin-left: auto;
   margin-right: auto;
-  color: rgba(52, 112, 255, 1);
-  font-family: "Manrope";
+  color: ${(p) => p.theme.colors.main};
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.5;
   text-decoration-line: underline;
 
   border: none;
@@ -30,6 +28,6 @@ export const LoadBtn = styled.button`
 
   &:hover,
   &:focus {
-    color: rgba(11, 68, 205, 1);
+    color: ${(p) => p.theme.colors.hover};
   }
 `;

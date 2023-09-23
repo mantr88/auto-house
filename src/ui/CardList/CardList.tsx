@@ -59,7 +59,7 @@ function CardList({ cars, isLoading }: CardListProps) {
         {visibleCars.slice(0, visibleCards).map((car, idx) => (
           <Card key={idx} car={car} />
         ))}
-        {visibleCards < 32 && (
+        {visibleCards < 32 && visibleCards > 7 && (
           <LoadBtn type="button" onClick={clickBtnLoadMoreHandler}>
             Load more
           </LoadBtn>

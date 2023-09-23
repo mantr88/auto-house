@@ -4,12 +4,13 @@ export const InfoCarWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   padding: 40px;
   border-radius: 24px;
 
   @media screen and (max-width: 480px) {
     padding: 26px;
+    align-items: center;
   }
 `;
 
@@ -32,6 +33,7 @@ export const CrossBtn = styled.button`
 `;
 
 export const CarImg = styled.img`
+  width: 100%;
   height: 218px;
   margin-bottom: 14px;
   object-fit: cover;
@@ -46,33 +48,29 @@ export const CarTitle = styled.h3`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  color: #121417;
-  font-family: "Manrope";
+  color: ${(p) => p.theme.colors.darkText};
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.5;
 `;
 
 export const AccentText = styled.span`
-  color: #3470ff;
+  color: ${(p) => p.theme.colors.main};
 `;
 
 export const CarСharacteristics = styled.div`
   margin-bottom: 14px;
-  color: rgba(18, 20, 23, 0.5);
-  font-family: "Manrope";
+  color: ${(p) => p.theme.colors.paleTextCard};
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.5;
 
   span:not(:last-child)::after {
     content: "";
     display: inline-block;
     width: 1px;
     height: 16px;
-    background-color: rgba(18, 20, 23, 0.1);
+    background-color: ${(p) => p.theme.colors.divider};
     margin-right: 6px;
     margin-left: 6px;
     vertical-align: middle;
@@ -84,12 +82,10 @@ export const СharItems = styled.span`
 `;
 
 export const Description = styled.div`
-  color: #121417;
-  font-family: "Manrope";
+  color: ${(p) => p.theme.colors.darkText};
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.42;
 `;
 export const DescriptionText = styled.p`
   margin-bottom: 8px;
@@ -117,28 +113,26 @@ export const ConditionsItemsWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
-  color: #363535;
+  color: ${(p) => p.theme.colors.conditionsText};
   font-family: "Montserrat";
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.5;
   letter-spacing: -0.24px;
 `;
 
 export const ConditionsItems = styled.p`
   padding: 7px 14px;
   border-radius: 35px;
-  background: #f9f9f9;
+  background: ${(p) => p.theme.colors.conditionsBg};
 `;
 
 export const AcceptConditions = styled.span`
-  color: #3470ff;
+  color: ${(p) => p.theme.colors.main};
   font-family: Montserrat;
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 18px;
+  line-height: 1.5;
   letter-spacing: -0.24px;
 `;
 export const RentalLink = styled.a`
@@ -147,14 +141,12 @@ export const RentalLink = styled.a`
   padding: 12px 50px;
   border: none;
   border-radius: 12px;
-  background: rgba(11, 68, 205, 1);
+  background: ${(p) => p.theme.colors.main};
 
-  color: #fff;
-  font-family: "Manrope";
+  color: ${(p) => p.theme.colors.whiteText};
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.42;
 
   @media screen and (min-width: 480px) {
     margin-top: 24px;
@@ -162,6 +154,6 @@ export const RentalLink = styled.a`
 
   &:hover,
   &:focus {
-    background: rgba(52, 112, 255, 1);
+    background: ${(p) => p.theme.colors.hover};
   }
 `;

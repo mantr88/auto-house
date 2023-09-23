@@ -26,8 +26,8 @@ function FavoritesList() {
 
   return (
     <main>
-      {cars.length === 0 && <NotFound />}
       <CardList cars={cars} isLoading={isLoading} />
+      {cars.length === 0 && <NotFound />}
     </main>
   );
 }
