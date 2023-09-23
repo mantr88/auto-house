@@ -19,10 +19,10 @@ import {
 
 import Cross from "../Icons/Cross";
 
-interface CardProps {
+type CardProps = {
   car: Car;
   closeModal: () => void;
-}
+};
 
 function CarInfoModal({ car, closeModal }: CardProps) {
   const {

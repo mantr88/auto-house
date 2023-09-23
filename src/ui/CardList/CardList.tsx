@@ -1,16 +1,9 @@
 import { useState } from "react";
 import Card from "../Card/Card";
-import { Cars } from "./CardList.types";
+import { CardListProps, Mark, Price } from "./CardList.types";
 import { ListContainer, LoadBtn } from "./CardList.styled";
 import Selects from "../../components/Selects/Selects";
-
-type Mark = string | undefined;
-type Price = number | undefined;
-
-type CardListProps = {
-  cars: Cars;
-  isLoading: boolean;
-};
+import { filtersCars } from "../../utils/filtersCars";
 
 function CardList({ cars, isLoading }: CardListProps) {
   const [filterByMark, setFilterByMark] = useState<Mark>("");
@@ -44,40 +37,6 @@ function CardList({ cars, isLoading }: CardListProps) {
       setStartMileage(Number(startMileageInput.value));
       setEndMileage(Number(endMileageInput.value));
     }
-  };
-
-  const filtersCars = (
-    cars: Cars,
-    filterByMark: Mark,
-    filterByPrice: Price,
-    startMileage: number,
-    endMileage: number
-  ) => {
-    let filteredCars = [...cars];
-
-    if (filterByMark) {
-      const normalizeFilterByMark = filterByMark.toLowerCase();
-
-      filteredCars = filteredCars.filter((car) =>
-        car.make.toLowerCase().includes(normalizeFilterByMark)
-      );
-    }
-
-    if (filterByPrice) {
-      filteredCars = filteredCars.filter((car) => {
-        return Number(car.rentalPrice.slice(1)) <= filterByPrice;
-      });
-    }
-
-    if (startMileage) {
-      filteredCars = filteredCars.filter((car) => car.mileage >= startMileage);
-    }
-
-    if (endMileage) {
-      filteredCars = filteredCars.filter((car) => car.mileage <= endMileage);
-    }
-
-    return filteredCars;
   };
 
   const visibleCars = filtersCars(

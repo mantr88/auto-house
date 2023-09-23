@@ -17,9 +17,9 @@ import {
 import HeartIsFilled from "../Icons/HeartIsFilled";
 import ClearHeart from "../Icons/ClearHeart";
 
-interface CardProps {
+type CardProps = {
   car: Car;
-}
+};
 
 function Card({ car }: CardProps) {
   const [active, setActive] = useState(false);

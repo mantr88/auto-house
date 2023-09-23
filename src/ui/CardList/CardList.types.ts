@@ -18,3 +18,11 @@ export type Car = {
 };
 
 export type Cars = Car[];
+
+export type Mark = string | undefined;
+export type Price = number | undefined;
+
+export type CardListProps = {
+  cars: Cars;
+  isLoading: boolean;
+};

@@ -1,13 +1,7 @@
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Content, Overlay } from "./PopupWondow.styles";
-
-type Props = {
-  setActive: (arg: boolean) => void;
-  children: ReactNode;
-  active: boolean;
-};
-type QuerySelector = HTMLDivElement | DocumentFragment;
+import { Props, QuerySelector } from "./PopupWondow.types";
 
 const PopupWindow = ({ active, setActive, children }: Props) => {
   useEffect(() => {
