@@ -21,6 +21,6 @@ export const Content = styled.div`
 
   @media screen and (max-width: 480px) {
     width: 95%;
-    height: 90%;
+    height: 100vh;
   }
 `;

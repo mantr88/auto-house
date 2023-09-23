@@ -15,4 +15,8 @@ export const Container = styled.div`
   @media screen and (min-width: 1200px) {
     width: 1440px;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;

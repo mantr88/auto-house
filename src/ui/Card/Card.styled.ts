@@ -89,7 +89,7 @@ export const СharItems = styled.span`
   margin-bottom: 5px;
 `;
 
-export const CardBtn = styled.div`
+export const CardBtn = styled.button`
   width: 100%;
   height: 44px;
   padding: 12px 99px;

@@ -4,6 +4,7 @@ export const InfoCarWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 40px;
   border-radius: 24px;
 
@@ -31,10 +32,14 @@ export const CrossBtn = styled.button`
 `;
 
 export const CarImg = styled.img`
-  height: 268px;
+  height: 218px;
   margin-bottom: 14px;
   object-fit: cover;
   border-radius: 14px;
+
+  @media screen and (min-width: 480px) {
+    height: 268px;
+  }
 `;
 
 export const CarTitle = styled.h3`
@@ -87,7 +92,11 @@ export const Description = styled.div`
   line-height: 20px;
 `;
 export const DescriptionText = styled.p`
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const Accessories = styled.p`
@@ -96,8 +105,12 @@ export const Accessories = styled.p`
 `;
 
 export const Conditions = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-weight: 500;
+
+  @media screen and (min-width: 480px) {
+    margin-bottom: 16px;
+  }
 `;
 
 export const ConditionsItemsWrap = styled.div`
@@ -130,7 +143,7 @@ export const AcceptConditions = styled.span`
 `;
 export const RentalLink = styled.a`
   width: 168px;
-  margin-top: 24px;
+  margin-top: 12px;
   padding: 12px 50px;
   border: none;
   border-radius: 12px;
@@ -142,6 +155,10 @@ export const RentalLink = styled.a`
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+
+  @media screen and (min-width: 480px) {
+    margin-top: 24px;
+  }
 
   &:hover,
   &:focus {
