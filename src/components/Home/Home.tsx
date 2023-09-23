@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Asistance from "../../ui/Icons/Asistance";
 import Documents from "../../ui/Icons/Documents";
 import GoodCar from "../../ui/Icons/GoodCar";
@@ -45,15 +44,7 @@ function HomeMain() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sed
             nulla at illo corporis placeat beatae accusantium, hic perferendis
             sequi vel ratione molestiae debitis corrupti impedit, ab pariatur
-            odio laudantium. Velit minima sapiente, excepturi maxime dolores
-            saepe expedita vitae cupiditate ab! Incidunt nemo velit ducimus
-            blanditiis nostrum. Ad deserunt enim expedita provident doloremque
-            esse optio nihil. Corrupti quibusdam, eaque necessitatibus suscipit,
-            consectetur eum laudantium consequatur nulla voluptatem, nostrum
-            molestias? Tempore recusandae qui dignissimos, fuga maxime corporis,
-            laborum voluptas quam, eveniet nam voluptatem. Quo incidunt
-            excepturi quibusdam eius, adipisci iusto quasi architecto dolores
-            sed quae facilis explicabo nulla ?
+            odio laudantium.
           </Text>
         </TextWrap>
       </DescriptionSection>
@@ -87,9 +78,7 @@ function HomeMain() {
           </AdvItem>
         </AdvList>
       </Advantages>
-      <GoLink>
-        <Link to={"/auto-house/catalog"}>Go to rent a car!</Link>
-      </GoLink>
+      <GoLink to={"/auto-house/catalog"}>Rent a car</GoLink>
     </div>
   );
 }
