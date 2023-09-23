@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { getCars } from "../../services/api";
+import { useState } from "react";
 import Card from "../Card/Card";
 import { Cars } from "./CardList.types";
 import { ListContainer, LoadBtn } from "./CardList.styled";
@@ -8,32 +7,17 @@ import Selects from "../../components/Selects/Selects";
 type Mark = string | undefined;
 type Price = number | undefined;
 
-function CardList() {
-  const [cars, setCars] = useState<Cars | []>([]);
-  const [isLoading, setIsLoading] = useState(false);
+type CardListProps = {
+  cars: Cars;
+  isLoading: boolean;
+};
+
+function CardList({ cars, isLoading }: CardListProps) {
   const [filterByMark, setFilterByMark] = useState<Mark>("");
   const [filterByPrice, setFilterByPrice] = useState<Price>(0);
   const [startMileage, setStartMileage] = useState(0);
   const [endMileage, setEndMileage] = useState(0);
   const [visibleCards, setVisibleCards] = useState(8);
-
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        setIsLoading(true);
-        const result = await getCars();
-        if (result) {
-          setCars(result);
-          return;
-        }
-      } catch (error) {
-        throw new Error(`😢Sorry, it is error. Your error 👉 ${error}`);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchCars();
-  }, []);
 
   const clickBtnLoadMoreHandler = () => {
     setVisibleCards((pervState) => pervState + 8);
