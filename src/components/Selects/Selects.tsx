@@ -2,8 +2,7 @@ import { useState } from "react";
 import Select from "react-select";
 import {
   FormInput,
-  FormInputFrom,
-  FormInputTo,
+  SearchButton,
   SelectBlocTitle,
   SelectBlocWrap,
   SelectsWrap,
@@ -44,9 +43,9 @@ function Selects({
           styles={{
             control: (base) => ({
               ...base,
-              paddingTop: "14px",
-              paddingLeft: "18px",
-              paddingBottom: "14px",
+              paddingTop: 6,
+              paddingLeft: 18,
+              paddingBottom: 6,
               borderRadius: 14,
               background: "#F7F7FB",
               borderStyle: "none",
@@ -85,9 +84,9 @@ function Selects({
           styles={{
             control: (base) => ({
               ...base,
-              paddingTop: "14px",
+              paddingTop: "6px",
               paddingLeft: "18px",
-              paddingBottom: "14px",
+              paddingBottom: "6px",
               borderRadius: 14,
               background: "#F7F7FB",
               borderStyle: "none",
@@ -124,10 +123,20 @@ function Selects({
           noValidate
         >
           <label>
-            <FormInputFrom type="text" name="startMileage" placeholder="From" />
-            <FormInputTo type="text" name="endMileage" placeholder="To" />
+            <FormInput
+              id="startMileage"
+              type="text"
+              name="startMileage"
+              placeholder="From"
+            />
+            <FormInput
+              id="endMileage"
+              type="text"
+              name="endMileage"
+              placeholder="To"
+            />
           </label>
-          <button type="submit">Search</button>
+          <SearchButton type="submit">Search</SearchButton>
         </form>
       </SelectBlocWrap>
     </SelectsWrap>
