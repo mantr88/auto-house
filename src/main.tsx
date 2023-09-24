@@ -11,6 +11,12 @@ import "./fonts.css";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./services/theme.ts";
 
+// залишилось зробити
+
+// 1. Виправити помилку 404 на деплої;
+// 2. Додати лоадер;
+// 3. Зробити сторінку Not Found.
+
 const router = createBrowserRouter([
   {
     path: "/auto-house/",
