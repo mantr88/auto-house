@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Bars } from "react-loader-spinner";
 import Card from "../Card/Card";
 import { CardListProps, Mark, Price } from "./CardList.types";
 import { ListContainer, LoadBtn } from "./CardList.styled";
@@ -10,10 +11,10 @@ function CardList({ cars, isLoading }: CardListProps) {
   const [filterByPrice, setFilterByPrice] = useState<Price>(0);
   const [startMileage, setStartMileage] = useState(0);
   const [endMileage, setEndMileage] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(8);
+  const [visibleItems, setVisibleItems] = useState(8);
 
   const clickBtnLoadMoreHandler = () => {
-    setVisibleCards((pervState) => pervState + 8);
+    setVisibleItems((pervState) => pervState + 8);
   };
 
   const selectedCarsByMark = (selectedMark: Mark) => {
@@ -39,7 +40,7 @@ function CardList({ cars, isLoading }: CardListProps) {
     }
   };
 
-  const visibleCars = filtersCars(
+  const filteredList = filtersCars(
     cars,
     filterByMark,
     filterByPrice,
@@ -55,11 +56,22 @@ function CardList({ cars, isLoading }: CardListProps) {
         selectedCarsByMileage={selectedCarsByMileage}
       />
       <ListContainer>
-        {isLoading && <div>LOADING...</div>}
-        {visibleCars.slice(0, visibleCards).map((car, idx) => (
+        {isLoading && (
+          <Bars
+            height="80"
+            width="80"
+            color="#3470FF"
+            wrapperStyle={{
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginTop: "30vh",
+            }}
+          />
+        )}
+        {filteredList.slice(0, visibleItems).map((car, idx) => (
           <Card key={idx} car={car} />
         ))}
-        {visibleCards < 32 && visibleCards > 7 && (
+        {visibleItems < 32 && filteredList.length >= 8 && (
           <LoadBtn type="button" onClick={clickBtnLoadMoreHandler}>
             Load more
           </LoadBtn>
