@@ -7,7 +7,7 @@ export const SelectsWrap = styled.div`
   gap: 18px;
   margin-bottom: 50px;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     justify-content: center;
   }
 `;
