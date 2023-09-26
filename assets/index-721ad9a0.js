@@ -761,7 +761,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   gap: 18px;
   margin-bottom: 50px;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 768px) {
     justify-content: center;
   }
 `,Uu=K.div`
